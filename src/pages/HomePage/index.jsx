@@ -30,6 +30,7 @@ const index = () => {
 			{categories.slice(0, 5).map((category) => {
 				return (
 					<ProductList
+						key={category}
 						products={data.filter((x) => x.category === category)}
 						title={`Category ${category}`}
 					/>
