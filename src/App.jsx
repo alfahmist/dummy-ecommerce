@@ -37,6 +37,14 @@ function App() {
 					path: '/products/search/:name',
 					element: <SearchPage />,
 				},
+				{
+					path: '/add-product',
+					element: <></>,
+				},
+				{
+					path: '/products-editor',
+					element: <></>,
+				},
 			],
 		},
 	]);

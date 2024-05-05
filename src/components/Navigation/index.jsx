@@ -4,8 +4,13 @@ import { CategoryList, SearchBar } from '../';
 import { Link, NavLink } from 'react-router-dom';
 
 const navigation = [
-	{ name: 'Home', href: '/', current: true },
-	{ name: 'Products', href: '/products', current: false },
+	{ name: 'Home', href: '/' },
+	{ name: 'Products', href: '/products' },
+];
+
+const navigationRight = [
+	{ name: '+Produk', href: '/add-product' },
+	{ name: 'Products Editor', href: '/products-editor' },
 ];
 
 function classNames(...classes) {
@@ -63,6 +68,29 @@ const index = () => {
 										))}
 										{/* search */}
 										<SearchBar />
+										{navigationRight.map((item) => (
+											<NavLink
+												key={item.name}
+												to={item.href}
+												// className={classNames(
+												// 	item.current
+												// 		? 'bg-gray-900 text-white'
+												// 		: 'text-gray-300 hover:bg-gray-700 hover:text-white',
+												// 	'rounded-md px-3 py-2 text-sm font-medium'
+												// )}
+												className={({ isActive }) =>
+													[
+														isActive
+															? 'bg-gray-900 text-white'
+															: 'text-gray-300 hover:bg-gray-700 hover:text-white',
+														'rounded-md px-3 py-2 text-sm font-medium',
+													].join(' ')
+												}
+												aria-current={item.current ? 'page' : undefined}
+											>
+												{item.name}
+											</NavLink>
+										))}
 									</div>
 									<CategoryList />
 								</div>
