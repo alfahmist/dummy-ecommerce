@@ -1,6 +1,6 @@
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { SearchBar } from '../';
+import { CategoryList, SearchBar } from '../';
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -61,6 +61,7 @@ const index = () => {
 										{/* search */}
 										<SearchBar />
 									</div>
+									<CategoryList />
 								</div>
 							</div>
 						</div>
