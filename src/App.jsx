@@ -7,6 +7,7 @@ import {
 	CategoryPage,
 	SearchPage,
 	ErrorPage,
+	AddPage,
 } from './pages';
 import Layout from './Layout';
 
@@ -39,7 +40,7 @@ function App() {
 				},
 				{
 					path: '/add-product',
-					element: <></>,
+					element: <AddPage />,
 				},
 				{
 					path: '/products-editor',
