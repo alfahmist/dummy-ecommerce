@@ -5,6 +5,7 @@ import CategoryPage from './CategoryPage';
 import SearchPage from './SearchPage';
 import ErrorPage from './ErrorPage';
 import AddPage from './AddPage';
+import EditPage from './EditPage';
 
 export {
 	HomePage,
@@ -14,4 +15,5 @@ export {
 	SearchPage,
 	ErrorPage,
 	AddPage,
+	EditPage,
 };

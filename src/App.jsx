@@ -8,6 +8,7 @@ import {
 	SearchPage,
 	ErrorPage,
 	AddPage,
+	EditPage,
 } from './pages';
 import Layout from './Layout';
 
@@ -43,8 +44,8 @@ function App() {
 					element: <AddPage />,
 				},
 				{
-					path: '/products-editor',
-					element: <></>,
+					path: '/products-editor/:productId',
+					element: <EditPage />,
 				},
 			],
 		},
