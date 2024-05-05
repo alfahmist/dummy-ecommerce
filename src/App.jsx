@@ -30,11 +30,11 @@ function App() {
 					element: <DetailPage />,
 				},
 				{
-					path: '/category/:categoryName',
+					path: '/products/category/:categoryName',
 					element: <CategoryPage />,
 				},
 				{
-					path: '/search/:name',
+					path: '/products/search/:name',
 					element: <SearchPage />,
 				},
 			],

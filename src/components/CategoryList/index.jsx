@@ -16,7 +16,7 @@ const index = () => {
 					return (
 						<Link
 							key={categoryName}
-							to={`/category/${categoryName}`}
+							to={`/products/category/${categoryName}`}
 							className='cursor-pointer text-white'
 						>
 							{categoryName}

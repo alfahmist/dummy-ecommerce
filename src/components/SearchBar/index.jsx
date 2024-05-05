@@ -8,7 +8,7 @@ const index = () => {
 
 	const search = (searchValue) => {
 		if (searchValue !== '') {
-			navigate(`/search/${searchValue}`);
+			navigate(`/products/search/${searchValue}`);
 		}
 		setSearchValue('');
 	};
