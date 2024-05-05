@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/search-svgrepo-com.svg';
 
 const index = () => {
@@ -5,7 +6,9 @@ const index = () => {
 		<>
 			<div className='flex border'>
 				<input type='text' className='outline-none px-2' />
-				<img src={searchIcon} alt='' className='px-3 cursor-pointer' />
+				<Link to={'/products'} className='flex px-3 cursor-pointer'>
+					<img src={searchIcon} alt='searchIcon' />
+				</Link>
 			</div>
 		</>
 	);
