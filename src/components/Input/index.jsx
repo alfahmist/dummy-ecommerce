@@ -5,7 +5,7 @@ const index = ({ name, onChange, value }) => {
 				htmlFor={name}
 				className='block text-sm font-medium leading-6 text-gray-900'
 			>
-				{name}
+				{name.slice(0, 1).toUpperCase() + name.slice(1, name.length)}
 			</label>
 			<div className='relative mt-2 rounded-md shadow-sm'>
 				<input
