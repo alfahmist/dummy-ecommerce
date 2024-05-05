@@ -1,7 +1,7 @@
 import Navigation from './Navigation';
 import SearchBar from './SearchBar';
 import ProductList from './ProductList';
-import Product from './Product';
+import ProductItem from './ProductItem';
 import CategoryList from './CategoryList';
 
-export { Navigation, SearchBar, ProductList, Product, CategoryList };
+export { Navigation, SearchBar, ProductList, ProductItem, CategoryList };
