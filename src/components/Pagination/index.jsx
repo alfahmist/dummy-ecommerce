@@ -1,4 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
+import { useState } from 'react';
 
 const index = (props) => {
 	const {
@@ -20,6 +21,7 @@ const index = (props) => {
 	console.log(pages);
 	const nextPage = () => {
 		if (viewData < totalData) {
+			setCurrPage(currPage + 1);
 			setStartdata(startData + DataViewPerPage);
 			setViewData(viewData + DataViewPerPage);
 			console.log('next Page');
@@ -27,14 +29,17 @@ const index = (props) => {
 	};
 
 	const prevPage = () => {
-		if (viewData < totalData) {
+		if (viewData > DataViewPerPage) {
+			setCurrPage(currPage - 1);
 			setStartdata(startData - DataViewPerPage);
 			setViewData(viewData - DataViewPerPage);
 			console.log('prev Page');
 		}
 	};
 
+	const [currPage, setCurrPage] = useState(1);
 	const currentPage = (page) => {
+		setCurrPage(page);
 		setStartdata(page * DataViewPerPage - DataViewPerPage);
 		setViewData(page * DataViewPerPage);
 		console.log('minus');
@@ -81,8 +86,13 @@ const index = (props) => {
 							{pages.map((page) => {
 								return (
 									<button
+										key={page}
 										onClick={() => currentPage(page)}
-										className='relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex'
+										// className='relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex'
+										className={[
+											page === currPage ? 'bg-black text-white' : '',
+											'relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-black hover:text-white focus:z-20 focus:outline-offset-0 md:inline-flex',
+										].join(' ')}
 									>
 										{page}
 									</button>

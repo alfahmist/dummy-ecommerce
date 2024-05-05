@@ -8,7 +8,7 @@ const getProducts = () => {
 };
 
 const index = () => {
-	let DataViewPerPage = 10;
+	let DataViewPerPage = 4;
 
 	const [data, setData] = useState([]);
 	const [startData, setStartdata] = useState(0);
