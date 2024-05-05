@@ -1,35 +1,21 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const data = [
-	'smartphones',
-	'laptops',
-	'fragrances',
-	'skincare',
-	'groceries',
-	'home-decoration',
-	'furniture',
-	'tops',
-	'womens-dresses',
-	'womens-shoes',
-	'mens-shirts',
-	'mens-shoes',
-	'mens-watches',
-	'womens-watches',
-	'womens-bags',
-	'womens-jewellery',
-	'sunglasses',
-	'automotive',
-	'motorcycle',
-	'lighting',
-];
-
 const index = () => {
+	const [categoryNames, setCategoryNames] = useState([]);
+	useEffect(() => {
+		axios.get('https://dummyjson.com/products/categories').then((response) => {
+			setCategoryNames(response.data);
+		});
+	});
 	return (
 		<>
 			<div className='flex flex-wrap space-x-4'>
-				{data.slice(0, 5).map((categoryName) => {
+				{categoryNames.slice(0, 10).map((categoryName) => {
 					return (
 						<Link
+							key={categoryName}
 							to={`/category/${categoryName}`}
 							className='cursor-pointer text-white'
 						>

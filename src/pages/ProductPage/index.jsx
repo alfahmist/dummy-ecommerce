@@ -1,83 +1,24 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import { ProductList } from '../../components';
 
-const products = [
-	{
-		id: 1,
-		name: 'Basic Tee',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$35',
-		color: 'Black',
-	},
-	{
-		id: 1,
-		name: 'Basic Tee',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$35',
-		color: 'Black',
-	},
-	{
-		id: 1,
-		name: 'Basic Tee',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$35',
-		color: 'Black',
-	},
-	{
-		id: 1,
-		name: 'Basic Tee',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$35',
-		color: 'Black',
-	},
-	{
-		id: 1,
-		name: 'Basic Tee',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$35',
-		color: 'Black',
-	},
-	{
-		id: 1,
-		name: 'Basic Tee',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$35',
-		color: 'Black',
-	},
-	{
-		id: 1,
-		name: 'Basic Tee',
-		href: '#',
-		imageSrc:
-			'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-		imageAlt: "Front of men's Basic Tee in black.",
-		price: '$35',
-		color: 'Black',
-	},
-	// More products...
-];
+const getProducts = () => {
+	return axios.get('https://dummyjson.com/products?limit=0');
+};
 
 const index = () => {
+	const [data, setData] = useState([]);
+	useEffect(() => {
+		getProducts().then((response) => {
+			console.log(response.data.products);
+			setData(response.data.products);
+		});
+	}, []);
+
 	return (
 		<>
-			<ProductList products={products} title={'All Product'} />
+			<ProductList products={data} title={'All Product'} />
 		</>
 	);
 };
