@@ -3,7 +3,7 @@ import ProductPage from './ProductPage';
 import DetailPage from './DetailPage';
 import CategoryPage from './CategoryPage';
 import SearchPage from './SearchPage';
-import NotFoundPage from './NotFoundPage';
+import ErrorPage from './ErrorPage';
 
 export {
 	HomePage,
@@ -11,5 +11,5 @@ export {
 	DetailPage,
 	CategoryPage,
 	SearchPage,
-	NotFoundPage,
+	ErrorPage,
 };

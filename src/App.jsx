@@ -1,25 +1,49 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import {
 	DetailPage,
 	HomePage,
 	ProductPage,
 	CategoryPage,
 	SearchPage,
+	ErrorPage,
 } from './pages';
-import { Navigation } from './components';
+import Layout from './Layout';
+
 function App() {
+	const router = createBrowserRouter([
+		{
+			path: '/',
+			element: <Layout />,
+			errorElement: <ErrorPage />,
+			children: [
+				{
+					path: '/',
+					element: <HomePage />,
+				},
+				{
+					path: '/products',
+					element: <ProductPage />,
+				},
+				{
+					path: '/products/detail/:productId',
+					element: <DetailPage />,
+				},
+				{
+					path: '/category/:categoryName',
+					element: <CategoryPage />,
+				},
+				{
+					path: '/search/:name',
+					element: <SearchPage />,
+				},
+			],
+		},
+	]);
+
 	return (
 		<>
-			<BrowserRouter>
-				<Navigation />
-				<Routes>
-					<Route path='/' element={<HomePage />} />
-					<Route path='/products' element={<ProductPage />} />
-					<Route path='/products/detail/:productId' element={<DetailPage />} />
-					<Route path='/category/:categoryName' element={<CategoryPage />} />
-					<Route path='/search/:name' element={<SearchPage />} />
-				</Routes>
-			</BrowserRouter>
+			<RouterProvider router={router} />
 		</>
 	);
 }
