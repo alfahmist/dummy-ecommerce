@@ -6,6 +6,7 @@ import CategoryList from './CategoryList';
 import Pagination from './Pagination';
 import SelectCategory from './SelectCategory';
 import Input from './Input';
+import Form from './Form';
 
 export {
 	Navigation,
@@ -16,4 +17,5 @@ export {
 	Pagination,
 	SelectCategory,
 	Input,
+	Form,
 };
