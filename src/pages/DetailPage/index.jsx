@@ -123,7 +123,7 @@ const index = () => {
 								<p className='text-sm text-gray-600'>Brand : {product.brand}</p>
 								<Link
 									className='text-sm text-gray-600 '
-									to={`/category/${product.category}`}
+									to={`/products/category/${product.category}`}
 								>
 									Category :{' '}
 									<span className='hover:text-black'>{product.category}</span>

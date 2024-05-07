@@ -1,11 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const index = (props) => {
 	const { product } = props;
+	let location = useLocation();
+	let path = '/products/detail/';
+	if (location.pathname == '/products-editor') {
+		path = location.pathname + '/detail/';
+	}
+	console.log(location.pathname);
 	return (
 		<div className='group relative'>
 			<div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80'>
-				<Link to={`/products/detail/${product.id}`}>
+				<Link to={`${path}${product.id}`}>
 					<img
 						src={product.thumbnail}
 						alt={product.imageAlt}
@@ -16,13 +22,13 @@ const index = (props) => {
 			<div className='mt-4 flex justify-between'>
 				<div>
 					<h3 className='text-sm text-gray-700'>
-						<Link to={`/products/detail/${product.id}`}>
+						<Link to={`${path}${product.id}`}>
 							{/* <span aria-hidden='true' className='absolute inset-0' /> */}
 							{product.title}
 						</Link>
 					</h3>
 					<Link
-						to={`/category/${product.category}`}
+						to={`/products/category/${product.category}`}
 						className='mt-1 text-sm text-gray-500 hover:text-black'
 					>
 						{product.category}

@@ -44,7 +44,11 @@ function App() {
 					element: <AddPage />,
 				},
 				{
-					path: '/products-editor/:productId',
+					path: '/products-editor',
+					element: <ProductPage />,
+				},
+				{
+					path: '/products-editor/detail/:productId',
 					element: <EditPage />,
 				},
 			],

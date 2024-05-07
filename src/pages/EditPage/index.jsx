@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { StarIcon } from '@heroicons/react/20/solid';
+import { Form } from '../../components';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -144,6 +145,8 @@ const index = () => {
 					</div>
 				</div>
 			</div>
+
+			<Form setData={setProduct} data={product} method={'post'} edit />
 		</div>
 	);
 };

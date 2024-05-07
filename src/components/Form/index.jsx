@@ -13,7 +13,7 @@ const index = (props) => {
 	const [image, setImage] = useState([]);
 
 	const addProducts = (id, price, title, category, brand, images) => {
-		if (method === post) {
+		if (method === 'post') {
 			axios
 				.post('https://dummyjson.com/products/add', {
 					title: title,
